@@ -24,6 +24,7 @@ Our website highlights four main features, and there's even more variety of usef
 4.	User Profiles:
 •	Customizable profiles for users to manage personal information.
 •	Track and review uploaded posts for easy reference.
+
 Tools:
 We made our Skin Diseases Detection and Consultation Website very carefully using strong tools and technologies. This helps make sure that when people use it, everything works smoothly, and they can easily do what they want on the website.
 •	HTML (Hypertext Markup Language): HTML serves as the foundational language for structuring the website's content. It defines the layout and elements on each page, providing the essential structure for user interaction.
