@@ -1,0 +1,190 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+    background-color: rgba(183, 236, 236, 0.678);
+    color: #212529;
+    
+}
+
+.container {
+    max-width: 600px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(144, 214, 214, 0.678);
+}
+
+.card-header {
+    background-color: #027e8f;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #2ab300;
+    border-color: #00ccff;
+}
+
+.btn-primary:hover {
+    background-color: #00ff88;
+    border-color: #0056b3;
+}
+
+.image-row {
+    display: flex;
+    max-width: 800px; /* Adjust the max-width as needed */
+    justify-content: center;
+}
+
+
+.image-container {
+    text-align: center;
+    margin: 5px;
+}
+
+
+img {
+    width: 350px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* This property maintains the aspect ratio */
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Nav and header start form here -->
+    <nav class="navbar navbar-expand-xxl navbar-dark " style="background-color: #027e8f">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://localhost:3000/main.php"> <h1 class="text-white">SDDC</h1></a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="navbarsExampleXxl" >
+            <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="http://localhost:3000/main.php"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:3000/about.php"><b>About</b></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false"><b>Diseases</b></a>
+                <ul class="dropdown-menu dropdown-menu-dark rounded-3">
+                  <li><a class="dropdown-item rounded-3" href="http://localhost:3000/melanocytic.php">Melanocytic Nevus</a></li>
+                  <li><a class="dropdown-item rounded-3" href="http://localhost:3000/melanoma.php">Melanoma</a></li>
+                  <li><a class="dropdown-item rounded-3" href="http://localhost:3000/psoriasis.php">Psoriasis</a></li>
+                  <li><a class="dropdown-item rounded-3" href="http://localhost:3000/seborheic_keratosis.php">Seborheic Keratosis</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form>
+              <input class="form-control" type="text" placeholder="Search" aria-label="Search" size=30>
+            </form>
+            <ul class="navbar-nav ">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false"><b style="border: 1px solid; border-radius: 4px; padding: 10px;">PROFILE</b></a>
+                <ul class="dropdown-menu dropdown-menu-dark rounded-3" >
+                  <li><a class="dropdown-item rounded-3" href="http://localhost:3000/profile.php">Your Profile</a></li>
+                  <li><a class="dropdown-item rounded-3 bg-danger" href="http://localhost:3000/logout.php">Log Out</a></li>
+                </ul>
+              </li>
+          </ul>
+          </div>
+        </div>
+    </nav>
+
+
+<!-- main content start from here -->
+
+<div class="container-fluid p-4 p-md-5 mb-4 text-dark" style=" background-image: url(static/image/banner.png); background-repeat: no-repeat; background-size:cover;">
+    <hr width="40%" align="left">
+    <div class="col-md-8 px-0">
+      <h1 class="display-4 text-dark-emphasis "><b>Detect You Skin Problem<br>by AIRTIFICIAL INTELIGENCE</b></h1>
+      <p class="lead my-3 text-dark">"Accurate Detection within Few Seconds following 3 steps" <br></p>
+      <br>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+  <div class="image-row">
+    <div class="image-container">
+        <img src="static/image/takinpic.png" alt="Image 1">
+        <p> <b>Step 1:</b> Take a close photo of your skin Problem</p>
+    </div>
+    <div class="image-container">
+        <img src="static/image/upload.png" alt="Image 2">
+        <p><b>Step 2:</b>  Upload the Photo here</p>
+    </div>
+    <div class="image-container">
+        <img src="static/image/detect.png" alt="Image 3">
+        <p><b>Step 3:</b>  Wait some seconds for Detection</p>
+    </div>
+</div>
+    
+
+    <!-- <h1>Image Classification</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png">
+        <button type="submit">Upload and Classify</button>
+    </form> -->
+
+    
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Upload Your Image Here</h3>
+            </div>
+            <div class="card-body">
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <!-- <label for="file" class="form-label">Choose an image:</label> -->
+                        <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload and Classify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- footer start form here -->
+<div class="mt-5 pt-5 pb-5 footer" style="background-color: #027e8f">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-xs-12 about-company">
+          <h1 class="pr-5 text-white">SDDC</h1>
+          <p class="pr-5 text-white-50">A user friendly website that all want.</p>
+          <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+        </div>
+        <div class="col-lg-4 col-xs-12  links">
+          <h4 class="mt-lg-0 mt-sm-3 text-white ">Creator</h4>
+            <ul class="m-0 p-0 text-white-50">
+              <li>- K. M. Safin Kamal</li>
+              <li>- Mysha Maliha Priyanka</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="col copyright">
+          <p class=""><small class="text-white-50">© 2023. All Rights Reserved to SAFIN.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
